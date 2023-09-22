@@ -20,7 +20,6 @@ export default function FormCadCliente(props) {
         const componente = e.currentTarget;
         console.log(componente.value)
         setCliente({...cliente,[componente.name]:componente.value});
-
     }
 
     function manipularSubmissao(e){
