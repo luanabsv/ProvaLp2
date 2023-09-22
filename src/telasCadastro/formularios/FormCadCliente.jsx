@@ -20,6 +20,9 @@ export default function FormCadCliente(props) {
         const componente = e.currentTarget;
         console.log(componente.value)
         setCliente({...cliente,[componente.name]:componente.value});
+        props.setMensagem('Cliente incluido com sucesso');
+        props.setTipoMensagem('success');
+        props.setMostrarMensagem(true);
     }
 
     function manipularSubmissao(e){
@@ -35,7 +38,10 @@ export default function FormCadCliente(props) {
 
                 props.setListaClientes([...props.listaClientes.filter((itemCliente)=>itemCliente.cpf !== cliente.cpf),cliente]);
                 props.setModoEdicao(false);
-                props.setClienteParaEdicao(clienteVazio);                
+                props.setClienteParaEdicao(clienteVazio);          
+                // props.setMensagem('Cliente alterado com sucesso');
+                // props.setTipoMensagem('success');
+                // props.setMostrarMensagem(true);    
             }
             setCliente(clienteVazio); // ou sair da tela de formulário 
             setFormValidado(false);
