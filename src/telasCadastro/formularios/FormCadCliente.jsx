@@ -20,9 +20,7 @@ export default function FormCadCliente(props) {
         const componente = e.currentTarget;
         console.log(componente.value)
         setCliente({...cliente,[componente.name]:componente.value});
-        props.setMensagem('Cliente incluido com sucesso');
-        props.setTipoMensagem('success');
-        props.setMostrarMensagem(true);
+
     }
 
     function manipularSubmissao(e){
@@ -32,6 +30,9 @@ export default function FormCadCliente(props) {
             //mandar os dados para o backend
             if(!props.modoEdicao){
                 props.setListaClientes([...props.listaClientes,cliente]);
+                props.setMensagem('Cliente incluido com sucesso');
+                props.setTipoMensagem('success');
+                props.setMostrarMensagem(true);
             }
             else{
                 //alterar os dados do cliente (filtra e adiciona)
